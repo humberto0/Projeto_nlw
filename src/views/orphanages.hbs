@@ -1,0 +1,63 @@
+<!DOCTYPE html><!-- tipo de html-->
+<html lang="pt-br"><!--  lingua do texto para o navegador-->
+<head><!-- cabeçalho -->
+    <meta charset="UTF-8"> <!-- tipo de caractere do texto-->
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <!-- Ela é responsavel por fazer aplicação do @media-->
+    <title>Localize um orfanato | Happy</title> <!-- nome que aparece na aba do navegador -->
+    <link rel="icon" href="/images/logo-icon.png">  <!-- tipo de link e onde ele vai pegar esse imagem-->
+    <link rel="stylesheet" href="/css/main.css"> <!-- link para o estilo do css-->
+    <link rel="stylesheet" href="/css/animations.css"> <!-- link para o estilo do css animação-->
+    <link rel="stylesheet" href="/css/page-orphanages.css"> <!-- link para o estilo do css pagina-->
+    <link href="https://fonts.googleapis.com/css2? family = Nunito: wght @ 400; 600;700; 800 & display = swap"
+          rel="stylesheet">
+    <!-- link para a fonte-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <!-- Biblioteaca para mapas interativos-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <!-- Biblioteaca para mapas interativos Js-->
+
+</head>
+<body><!-- parte branca do site -->
+<div id=" page-orphanages">
+    <aside class="animate-right"><!-- A parte de lado -->
+        <header>
+            <img src="/images/map-marker.svg" alt="Happy">
+        </header>
+        <h2>Escolha um orfanato no mapa</h2>
+        <p>Muitas crianças estão esperando sua visita :)</p>
+        <footer id="roda-pe"><!-- roda pé-->
+            <strong>Maranhão</strong>
+            <p>São Luis </p>
+        </footer>
+    </aside>
+
+    <div id="mapid" class="animate-appear"></div>
+    <div class="orphanages">
+        {{#each orphanages}}
+            <span hidden
+                  data-id="{{this.id}}"
+                  data-name="{{this.name}}"
+                  data-lat="{{this.lat}}"
+                  data-lng="{{this.lng}}"
+            ></span>
+        {{/each}}
+    </div>
+    <a href="/create-orphanage" class="create_orphanage" title="cadastre um orfanato" id="create_orphanage">
+        <!-- um link para o botão -->
+        <img src="/images/plus.svg" alt="Criar orfanato">
+    </a>
+
+
+</div>
+
+
+<script src="/scripts/page-orphanages.js">// a aplicação java script fica no final para não quebrar minha aplicação
+
+</script>
+</body>
+</html>

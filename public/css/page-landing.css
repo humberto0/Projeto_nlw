@@ -1,0 +1,87 @@
+#page-landing {
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%); /*rotação do gradiente( ele rotaciona e vai de 0% a 100%) e parte branca da tela */
+    min-height: 100vh; /* altura min*/
+    text-align: center; /* texto ao centro*/
+    display: flex; /* alinhar elementos um do lado do outro*/
+    align-items: center; /*alinhar os itens no centro*/
+}
+
+#conteiner {
+    margin: auto; /* automatizar as margens (laterais ligado com o flex)*/
+    width: min(90%, 112rem); /* a distancia minima entre os itens na tela */
+}
+
+
+.location, h1, .visit p { /* selecionando a classe e os elementos dentro da classe*/
+    height: 16vh;
+}
+
+.visit a { /* botão */
+    width: 8rem; /* largura */
+    height: 8rem; /* altura*/
+    background: #ffd666; /* cor*/
+    border-radius: 3rem; /* arredondar*/
+    display: flex; /* alinhar elementos um do lado do outro*/
+    align-items: center; /*alinhar os itens no centro*/
+    justify-content: center; /*centralizar bem*/
+    margin: auto; /* alinhar automaticamente a altura da margem  */
+    transition: background .2s; /* velocidade de transição da cor do botão */
+}
+
+.visit a:hover { /* selecionar o botão quando o mouse estiver em cima dele  */
+    background: #96feff; /* mudar a cor do botão quando o mouser estiver em cima  */
+}
+
+/*versão para desktop */
+@media (min-width: 760px) {
+    /*ou seja se o minimo de largura da tela for de 760 px pra cimas ele vai utilizar essas regras */
+    #conteiner { /* shorthand backgroud: image repeat position / size */
+        padding: 5rem 2rem; /* aumentar o espaçamento da borda para que tenha mais espaço  */
+        background: url("../images/bg.svg") no-repeat 65%/clamp(25rem, 50vw, 54rem);
+        /*buscando a imagem dentro da pasta e tirando ela e fazendo com que ela não se repita ou seja não fique expandida
+                e também centralizando a imagem em 80% em ambos os eixos */
+
+    }
+
+    header {
+        display: flex; /* ctodo conteudo dentro do cabeçalho vai um do lado do outro */
+        align-items: center; /*alinhar os itens horizontalmente */
+        justify-content: space-between; /*colocar um espaço entre os elementos*/
+
+    }
+
+    .location, h1, .visit p { /* selecionando a classe e os elementos dentro da classe*/
+        height: initial; /*Voltar para a posição inicial */
+        text-align: initial; /*alinhar o texto da maneira inicial que estava */
+    }
+
+    .location {
+        text-align: right; /*alinhar o texto para direita*/
+        font-size: 2.4rem;
+        line-height: 2.5rem; /*distancia entre as linhas*/
+    }
+
+    main h1 {
+        font-weight: bold; /*fonte em negrito*/
+        line-height: .88; /*altura da linha */
+
+        margin: clamp(7%, 9vh, 11%) 0 4rem; /* a altura da margem é modificada altomaticamente  */
+        width: min(300px, 80%); /*valor min da fonte e a porcetagem em relação a isso */
+    }
+
+    .visit {
+        display: flex; /*para ficar lado a lado */
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .visit p {
+        font-size: 2.4rem;
+        line-height: 1.5; /*largura da linha */
+        width: clamp(20rem, 20vw, 30rem);
+    }
+
+    .visit a {
+        margin: initial; /*voltar as configurações iniciais */
+    }
+}

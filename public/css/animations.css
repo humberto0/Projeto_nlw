@@ -1,0 +1,49 @@
+/*animação*/
+@keyframes up { /*uma animação para subir*/
+    from {
+        opacity: 0; /*ele vai começar com uma opacidade 0*/
+        transform: translateY(16px); /*ele vai sair de baixo pra cima no eixo y*/
+    }
+    to {
+        opacity: 100; /*ele termina a opacidade 100*/
+        transform: translateY(0px); /*ele vai terminar em cima*/
+
+    }
+}
+
+@keyframes right {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes appear { /*essa animação vai fazer uma aparição */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+.animate-up {
+    animation-name: up; /*nome da animação*/
+    animation-duration: 300ms; /*duração da animação*/
+    animation-fill-mode: backwards; /*vai estaguinar a animação na ultima parte*/
+}
+
+.animate-right {
+    animation-name: right; /*nome da animação*/
+    animation-duration: 300ms; /*duração da animação*/
+}
+
+.animate-appear {
+    animation-name: appear;
+    animation-duration: 300ms;
+    animation-fill-mode: backwards; /*vai estaguinar a animação na ultima parte*/
+}

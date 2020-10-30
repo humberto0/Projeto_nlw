@@ -1,0 +1,102 @@
+<!DOCTYPE html><!-- tipo de html-->
+<html lang="pt-br"><!--  lingua do texto para o navegador-->
+<head><!-- cabeçalho -->
+    <meta charset="UTF-8"> <!-- tipo de caractere do texto-->
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <!-- Ela é responsavel por fazer aplicação do @media-->
+    <title>{{orphanage.name}}</title> | Happy</title> <!-- nome que aparece na aba do navegador -->
+    <link rel="icon" href="/images/logo-icon.png">  <!-- tipo de link e onde ele vai pegar esse imagem-->
+    <link rel="stylesheet" href="/css/main.css"> <!-- link para o estilo do css-->
+    <link rel="stylesheet" href="/css/animations.css"> <!-- link para o estilo do css animação-->
+    <link rel="stylesheet" href="/css/page-orphanage.css"> <!-- link para o estilo do css pagina-->
+    <link rel="stylesheet" href="/css/sidebar.css"> <!-- link para o estilo do css-->
+    <link rel="stylesheet" href="/css/buttons.css"> <!-- o estilo botões do css-->
+    <link rel="stylesheet" href="/css/map.css"><!-- mapa estilo do css-->
+    <link href="https://fonts.googleapis.com/css2? family = Nunito: wght @ 400; 600;700; 800 & display = swap"
+          rel="stylesheet">
+    <!-- link para a fonte-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <!-- Biblioteaca para mapas interativos-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <!-- Biblioteaca para mapas interativos Js-->
+
+</head>
+<body><!-- parte branca do site -->
+<div id=" page-orphanage">
+    <aside class="animate-right sidebar"><!-- A parte de lado -->
+        <img src="/images/map-marker.svg" alt="Happy">
+        <footer>
+            <button onclick="history.back()">
+                <!-- funcionalidade java script que consulta o historico e volta para pagina anterior -->
+                <img src="/images/arrow-back.svg" alt="Voltar">
+            </button>
+        </footer>
+    </aside>
+    <main class="animate-appear with-sidebar">
+        <div class="orphanage-details">
+            <img src="{{orphanage.images }}" alt="{{orphanage.name}}"/>
+            <div class="images">
+                {{#each orphanage.images }}
+                    <button onclick="selectImage(event)" class="active" type="button">
+                        <img src="{{this}}" alt="{{orphanage.name}}">
+                    </button>
+                {{/each}}
+
+            </div>
+            <div class="orphanage-details-content">
+                <h1>{{orphanage.name}}</h1>
+                <p>{{orphanage.about}}</p>
+                <div class="map-container">
+                    <div id="mapid"></div>
+                    <span>
+                        data-lat= "{{orphanage.lat}}"
+                        data-lng= "{{orphanage.lng}}"
+
+                    </span>
+                    <footer>
+
+                        <a target="_blank" href="https://maps.google.com/mobile?q={{orphanage.lat}},{{orphanage.lng}}
+                        &z={15}">Ver rotas no Google Maps</a>
+                    </footer>
+
+                </div>
+                <hr/>
+                <h2>Instruções para visita</h2>
+                <p>
+                    {{orphanage.instructions}}
+                </p>
+                <div class="open-details">
+                    <div class="hour">
+                        <img src="/images/clock.svg" alt="Horários">
+                        {{orphanage.opening_hours}}
+                    </div>
+                    {{#if orphanage.open_on_weekends}}
+                    <div class="open-on-weekends open">
+                        <img src="/images/info.svg" alt="informações">
+                        Atendemos nos fins de semanas
+                    {{else}}
+                    <div class="open-on-weekends close">
+                        <img src="/images/info-red.svg" alt="informações">
+                        Não atendemos nos fins de semanas
+                    {{/if}}
+                    </div>
+                </div>
+                </div>
+                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, quero conversar sobre visitas no {{orphanage.name}}" class="primary-button"
+                    type="button" target="_blank">
+
+                    <img src="/images/whatsapp.svg" alt="Chamar no whatsapp">
+                    Entrar em contato
+                    </a>
+                </div>
+            </div>
+    </main>
+</div>
+<script src="/scripts/page-orphanage.js">// a aplicação java script fica no final para não quebrar minha aplicação
+</script>
+</body>
+</html>

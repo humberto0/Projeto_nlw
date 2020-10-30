@@ -1,0 +1,46 @@
+* {
+    margin: 0; /*margem*/
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    color: white;
+    background: #EBF2F5;
+}
+
+:root {
+    font-size: 62.5%; /*controle de medida das fontes*/
+}
+
+body, input, button, textarea { /* modificando um conjunto de coisas*/
+    /* font-size: 18px;/* tamanho da fonte*/
+    /* line-height: 1px;/*altura da linha*/
+    /* font-weight: 400;/*"peso da fonte"*/
+    /* font-family: 'Nunito', sans-serif;/* estilo da fonte*/
+    font: 400 1.8rem/1 'Nunito', sans-serif; /* tudo junto*/
+
+}
+
+#logo { /* id*/
+    animation-delay: 50ms; /*tempo a mais que ele vai receber */
+}
+
+.location { /*classe*/
+    animation-delay: 100ms;
+}
+
+main h1 { /*titulo*/
+    font-family: 'Calibri', "sans-serif";
+    animation-delay: 150ms;
+    font-size: clamp(4rem, 8vw, 8.4rem); /*uma função com valor min, intermediario e maximo que a fonte pode chegar, onde ela se adpta com o tamanho da tela*/
+}
+
+.visit p {
+    animation-delay: 200ms;
+}
+
+.visit a {
+    animation-delay: 250ms;
+}

@@ -1,0 +1,113 @@
+#page-orphanages {
+    width: 100%; /*largura */
+    height: 100%; /*altura*/
+
+    display: flex;
+}
+
+aside {
+    position: absolute;
+    width: clamp(24rem, 25vw, 44rem); /*largura para ter um maximo, minimo e o ideal */
+    height: clamp(69.5rem, 50vw, 80rem); /*largura para ter um maximo, minimo e o ideal */
+    /* Gradiente / Blue */
+    background: linear-gradient(329.54deg, #15B6D6 0%, #15D6D6 100%);
+    padding: clamp(3rem, 4vw, 8rem);
+    display: flex; /* por padrão ele coloca um do lado do outro */
+    flex-direction: column; /* mas pode ser ressetado colocando em coluna */
+    justify-content: space-between; /* colocar um espaço entre eles só que na vertical */
+}
+
+aside h2 {
+    margin-top: 6.4rem; /*margem para o topo */
+    font: 800 clamp(2rem, 5vw, 3.6rem)/1.1 'Nunito', sans-serif; /*tamanho e tipo da fonte */
+}
+
+aside p {
+    margin-top: 2.4rem;
+    font: 400 1.6rem/1.5 'Nunito', sans-serif;
+}
+
+aside footer p {
+    margin-top: .7rem;
+}
+
+/*id do mapa*/
+#mapid {
+    position: fixed; /*posicionar o mapa atrás do botão e fica fixo quando mova um rolamento da pagina*/
+    width: clamp(80rem, 75vw, 135rem); /*largura para ter um maximo, minimo e o ideal */
+    height: clamp(69.5rem, 50vw, 80rem); /*largura para ter um maximo, minimo e o ideal */
+    right: .2rem; /*move o mapa para o lado*/
+    top: .01rem; /*move o mapa pra baixo*/
+    left: clamp(24rem, 25vw, 44rem);
+    display: flex;
+    justify-content: center; /*centraliza o contener*/
+    align-items: center;
+
+
+    animation-delay: 200ms;
+}
+
+/*Botão*/
+a.create_orphanage {
+    position: absolute; /*liberdade para mover o botão*/
+    right: 4rem; /*move o botão para o lado*/
+    bottom: 4rem; /*move o botão pra baixo*/
+    z-index: 10;
+    width: 6.4rem;
+    height: 6.4rem;
+    background: #15B6D6; /*cor do botão*/
+    border: 0; /*deixa ele sem borda*/
+    border-radius: 2rem; /*arredonda o botão*/
+    display: flex;
+    justify-content: center; /*centraliza o contener*/
+    align-items: center;
+    transition: background-color .2s; /* suavizar a troca de cor ou seja trocar de maneira mais lenta */
+}
+
+a.create_orphanage:hover { /*a cor muda quando passa o mouse em cima*/
+    background: #17D6EB;
+}
+
+.leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.8); /*a cor com um suavização */
+}
+
+.leaflet-popup-content { /*dentro do icone*/
+    color: #0089A5; /*a cor de dentro*/
+    font: 700 2rem/1 'Nunito', sans-serif;
+
+    margin: .8rem 1.2rem; /*tamanho das margens*/
+
+    display: flex; /*conteudo vai se organizar de maneira flex*/
+    align-content: center; /*alinhar no centro*/
+    justify-content: space-between; /*espaço entre eles*/
+}
+
+.leaflet-popup-content a {
+    width: 4rem;
+    height: 4rem;
+    background: #15C3D6;
+    box-shadow: 17.2828px 27.65px 41.48px rgba(23, 142, 166, 0.16); /*sombra nas 3 direções */
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color .2s;
+}
+
+.leaflet-popup-content a:hover {
+    background: #17D6EB;
+}
+
+.leaflet-popup-tip {
+    display: none; /*o balão vai larga de ter a perninha */
+}
+
+.leaflet-container {
+    z-index: 5;
+}
+
+
+

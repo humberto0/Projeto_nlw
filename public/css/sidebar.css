@@ -1,0 +1,38 @@
+.sidebar {
+
+    position: fixed; /*um novo contexto e fica fixado quando vai abaixando a pagina */
+    z-index: 10;
+    width: 10rem;
+    height: 100%;
+    padding: 32px 24px; /* 3.2rem 2.4rem */
+    background: #15C3D6;
+
+    display: flex; /*vai deixar um item ao lado do outro*/
+    flex-direction: column; /* vai organizar verticalmente */
+    justify-content: space-between; /* espaço entre eles  */
+    align-items: center;
+
+}
+
+aside.sidebar footer button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: #12AFCB;
+    border-radius: 1.6rem; /* arredondamento das bordas */
+    cursor: pointer; /* quando eu passo o mouse em cima ele vai mudar o aspecto do cursor (ele vira uma mao */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color .2s;
+}
+
+aside.sidebar footer button:hover {
+    background: #17D6EB;
+}
+
+.with-sidebar {
+    padding-left: 90px; /* um espaço para o container não ficar em cima das figuras*/
+}
